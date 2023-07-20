@@ -17,10 +17,19 @@
 
 @section('content')
 <h1 id="mainh1">welcome to home page</h1>
+<h1>{{config("app.url")}}</h1>
+<h3>All Categories</h3>
+<ul class="list-inline">
+    @foreach ($cats as $cat)
+        <li class="list-inline-item">{{$cat->name}}</li>
+    @endforeach
+</ul>
 <h1>My User List</h1>
     @foreach ($users as $user)
         <li>{{$user->name}} - {{$user->email}} - {{$user->role=="2"?"Admin":"User"}}</li>
     @endforeach
+    <hr>
+    {{$users->links()}}
 @endsection
 
 @section('script')

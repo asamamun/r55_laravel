@@ -5,3 +5,10 @@ php artisan make:controller HomeController
 
 
 php artisan key:generate
+
+
+create model, controller with resource and migration:
+php artisan make:model Category -crm
+
+php artisan make:seeder CategorySeeder
+php artisan db:seed --class=CategorySeeder
