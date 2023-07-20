@@ -14,7 +14,7 @@ class CategorySeeder extends Seeder
     public function run(): void
     {
         for ($i=1; $i <= 20 ; $i++) { 
-            Category::insert([
+            Category::create([
                 'name'=> fake()->name(),
                 "description"=> fake()->text(),
             ]);

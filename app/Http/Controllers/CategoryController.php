@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 class CategoryController extends Controller
 {
@@ -12,7 +13,10 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
+        // $cats = Category::all();
+        $cats = Category::paginate(config("idb.perpage"));
+        return view("category.index")
+        ->with('cats', $cats);
     }
 
     /**
@@ -20,7 +24,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        //
+        return view("category.create");
     }
 
     /**
@@ -28,7 +32,9 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // dd($request);
+        Category::create($request->all());
+        return redirect("category")->with("success", "Successfully created");
     }
 
     /**
@@ -36,7 +42,7 @@ class CategoryController extends Controller
      */
     public function show(Category $category)
     {
-        //
+        return view("category.single")->with('cat',$category);
     }
 
     /**
@@ -61,5 +67,10 @@ class CategoryController extends Controller
     public function destroy(Category $category)
     {
         //
+    }
+
+    public function showcat($id){
+        $cat = Category::find($id);
+        return view("category.single")->with('cat',$cat);
     }
 }

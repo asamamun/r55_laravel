@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" href="{{asset("assets/css/bootstrap.min.css")}}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 
 </head>
 <body>
@@ -73,6 +74,7 @@
 
       <div class="row">
         <div class="col-9">
+          @include('partials.flash')
             @yield('content')
         </div>
         <div class="col-3">
