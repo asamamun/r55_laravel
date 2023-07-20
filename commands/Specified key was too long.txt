@@ -1,0 +1,4 @@
+in AppServiceProvider s boot method, add:
+
+use Illuminate\Support\Facades\Schema;
+Schema::defaultStringLength(191);

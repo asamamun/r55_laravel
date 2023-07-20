@@ -1,0 +1,4 @@
+composer create-project laravel/laravel example-app
+
+######## create controler ###########
+php artisan make:controller HomeController
