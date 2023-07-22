@@ -30,6 +30,7 @@ link: https://laravel.com/docs/10.x/eloquent#generating-model-classes
 Resource(controller):
 https://laravel.com/docs/10.x/controllers#actions-handled-by-resource-controller
 
+############Create Storage Link##############
 php artisan storage:link
 
 php artisan route:list

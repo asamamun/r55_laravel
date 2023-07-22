@@ -15,8 +15,9 @@ class CategoryController extends Controller
     {
         // $cats = Category::all();
         $cats = Category::paginate(config("idb.perpage"));
-        return view("category.index")
-        ->with('cats', $cats);
+        // return view("category.index")->with('cats', $cats);
+        // return view("category.index",['cats'=>$cats]);
+        return view("category.index",compact("cats"));
     }
 
     /**
@@ -34,7 +35,7 @@ class CategoryController extends Controller
     {
         // dd($request);
         Category::create($request->all());
-        return redirect("category")->with("success", "Successfully created");
+        return redirect("category")->with("info", "Successfully created");
     }
 
     /**
@@ -50,7 +51,7 @@ class CategoryController extends Controller
      */
     public function edit(Category $category)
     {
-        //
+        return view("category.edit")->with('category',$category);
     }
 
     /**
@@ -58,7 +59,11 @@ class CategoryController extends Controller
      */
     public function update(Request $request, Category $category)
     {
-        //
+        $category->name = $request->name;
+        $category->description = $request->description;
+        if($category->save()){
+            return redirect("category")->with("info", "Successfully Updated category, ID: " . $category->id);
+        }
     }
 
     /**
@@ -66,7 +71,9 @@ class CategoryController extends Controller
      */
     public function destroy(Category $category)
     {
-        //
+        if($category->delete()){
+            return redirect("category")->with("info", "Successfully Deleted category, ID: " . $category->id);
+        }
     }
 
     public function showcat($id){

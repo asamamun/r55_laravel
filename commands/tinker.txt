@@ -1,0 +1,596 @@
+Microsoft Windows [Version 10.0.19045.3208]
+(c) Microsoft Corporation. All rights reserved.
+
+D:\xampp8110\htdocs\R55\laravel\r55bookcode>composer require barryvdh/laravel-debugbar --dev
+Info from https://repo.packagist.org: #StandWithUkraine
+./composer.json has been updated
+Running composer update barryvdh/laravel-debugbar
+Loading composer repositories with package information
+Updating dependencies
+Lock file operations: 2 installs, 0 updates, 0 removals
+  - Locking barryvdh/laravel-debugbar (v3.8.1)
+  - Locking maximebf/debugbar (v1.18.2)
+Writing lock file
+Installing dependencies from lock file (including require-dev)
+Package operations: 2 installs, 0 updates, 0 removals
+  - Installing maximebf/debugbar (v1.18.2): Extracting archive
+  - Installing barryvdh/laravel-debugbar (v3.8.1): Extracting archive
+2 package suggestions were added by new dependencies, use `composer suggest` to see details.
+Generating optimized autoload files
+> Illuminate\Foundation\ComposerScripts::postAutoloadDump
+> @php artisan package:discover --ansi
+
+   INFO  Discovering packages.
+
+  barryvdh/laravel-debugbar ...................................... DONE
+  laravel/breeze ................................................. DONE
+  laravel/sail ................................................... DONE
+  laravel/sanctum ................................................ DONE
+  laravel/tinker ................................................. DONE
+  nesbot/carbon .................................................. DONE
+  nunomaduro/collision ........................................... DONE
+  nunomaduro/termwind ............................................ DONE
+  spatie/laravel-ignition ........................................ DONE
+
+83 packages you are using are looking for funding.
+Use the `composer fund` command to find out more!
+> @php artisan vendor:publish --tag=laravel-assets --ansi --force
+
+   INFO  No publishable resources for tag [laravel-assets].
+
+No security vulnerability advisories found
+Using version ^3.8 for barryvdh/laravel-debugbar
+
+D:\xampp8110\htdocs\R55\laravel\r55bookcode>php artisan tinker
+Psy Shell v0.11.19 (PHP 8.1.10 — cli) by Justin Hileman
+> 5+5*3
+= 20
+
+> $a = 5;
+= 5
+
+> compact("a");
+= [
+    "a" => 5,
+  ]
+
+> use App\Models\Category;
+> Category::find(1);
+= null
+
+> Category::find(77);
+= App\Models\Category {#7228
+    id: 77,
+    name: "Ms. Astrid Herzog",
+    description: "Quod ut harum qui autem. Maxime quasi architecto qui hic voluptatem. Est recusandae eos maiores dolores nostrum. Et nemo excepturi veniam aut molestiae aut.",
+    created_at: "2023-07-20 07:37:37",
+    updated_at: "2023-07-20 07:37:37",
+  }
+
+> $c = Category::find(77);
+= App\Models\Category {#7238
+    id: 77,
+    name: "Ms. Astrid Herzog",
+    description: "Quod ut harum qui autem. Maxime quasi architecto qui hic voluptatem. Est recusandae eos maiores dolores nostrum. Et nemo excepturi veniam aut molestiae aut.",
+    created_at: "2023-07-20 07:37:37",
+    updated_at: "2023-07-20 07:37:37",
+  }
+
+> $c->name;
+= "Ms. Astrid Herzog"
+
+> $c = Category::all();
+= Illuminate\Database\Eloquent\Collection {#7248
+    all: [
+      App\Models\Category {#7250
+        id: 72,
+        name: "Florida Botsford",
+        description: "Alias quis est ex officia. Harum iusto facere eius voluptatem officiis sed. Reprehenderit a aut minus vel numquam. Tempora est ipsa in ut dolorem.",
+        created_at: "2023-07-20 07:37:36",
+        updated_at: "2023-07-20 07:37:36",
+      },
+      App\Models\Category {#7251
+        id: 73,
+        name: "Shanie Pacocha",
+        description: "Beatae sed dolore ducimus omnis odio et. Aut error nostrum exercitationem in. Ipsam eos unde commodi aut sequi quis qui.",
+        created_at: "2023-07-20 07:37:36",
+        updated_at: "2023-07-20 07:37:36",
+      },
+      App\Models\Category {#7252
+        id: 74,
+        name: "Lacey Kiehn",
+        description: "Consequatur autem odit sapiente vel. Et repudiandae eos ut. Repellat nisi ducimus in velit pariatur.",
+        created_at: "2023-07-20 07:37:36",
+        updated_at: "2023-07-20 07:37:36",
+      },
+      App\Models\Category {#7253
+        id: 75,
+        name: "Austen Pouros",
+        description: "Voluptatibus quasi assumenda quo nemo aliquid deserunt fugiat omnis. Maiores quia voluptatem assumenda molestias qui.",
+        created_at: "2023-07-20 07:37:36",
+        updated_at: "2023-07-20 07:37:36",
+      },
+      App\Models\Category {#7254
+        id: 76,
+        name: "Faye Bechtelar",
+        description: "Mollitia earum aut et itaque. Alias nemo accusantium qui velit eum. Voluptates enim et accusamus omnis aut est.",
+        created_at: "2023-07-20 07:37:37",
+        updated_at: "2023-07-20 07:37:37",
+      },
+      App\Models\Category {#7255
+        id: 77,
+        name: "Ms. Astrid Herzog",
+        description: "Quod ut harum qui autem. Maxime quasi architecto qui hic voluptatem. Est recusandae eos maiores dolores nostrum. Et nemo excepturi veniam aut molestiae aut.",
+        created_at: "2023-07-20 07:37:37",
+        updated_at: "2023-07-20 07:37:37",
+      },
+      App\Models\Category {#7256
+        id: 78,
+        name: "Mrs. Freida Thompson",
+        description: "Provident debitis ad totam. Nemo et iusto hic iste. Nesciunt rem rem voluptatem.",
+        created_at: "2023-07-20 07:37:37",
+        updated_at: "2023-07-20 07:37:37",
+      },
+      App\Models\Category {#7257
+        id: 79,
+        name: "Deondre Yost",
+        description: "Sunt commodi provident quae ab. Quis reprehenderit nesciunt ad. Velit et quis repellendus eum soluta aut molestiae.",
+        created_at: "2023-07-20 07:37:37",
+        updated_at: "2023-07-20 07:37:37",
+      },
+      App\Models\Category {#7258
+        id: 80,
+        name: "Roy Goldner",
+        description: "Consequatur et perferendis sit laboriosam. Similique corporis qui eum dolor eos quia ducimus recusandae. Dolorem ea est vero sit ut accusamus.",
+        created_at: "2023-07-20 07:37:37",
+        updated_at: "2023-07-20 07:37:37",
+      },
+      App\Models\Category {#7259
+        id: 81,
+        name: "AA",
+        description: "BB",
+        created_at: "2023-07-20 08:03:52",
+        updated_at: "2023-07-20 08:03:52",
+      },
+      App\Models\Category {#7260
+        id: 83,
+        name: "BB",
+        description: "BB",
+        created_at: "2023-07-20 08:05:33",
+        updated_at: "2023-07-20 08:05:33",
+      },
+      App\Models\Category {#7261
+        id: 84,
+        name: "sadfsdaf",
+        description: "sadfsdafsf",
+        created_at: "2023-07-20 08:05:50",
+        updated_at: "2023-07-20 08:05:50",
+      },
+      App\Models\Category {#7262
+        id: 85,
+        name: "sadfsadf",
+        description: "sdafsdf",
+        created_at: "2023-07-20 08:07:51",
+        updated_at: "2023-07-20 08:07:51",
+      },
+      App\Models\Category {#7263
+        id: 86,
+        name: "8888888888",
+        description: "88888888888888888888",
+        created_at: "2023-07-20 08:10:10",
+        updated_at: "2023-07-20 08:10:10",
+      },
+      App\Models\Category {#7264
+        id: 87,
+        name: "sadfsdaf777",
+        description: "7asdfsdafdsffd",
+        created_at: "2023-07-20 08:10:45",
+        updated_at: "2023-07-20 08:10:45",
+      },
+      App\Models\Category {#7265
+        id: 88,
+        name: "tteesstt",
+        description: "test test",
+        created_at: "2023-07-22 03:58:49",
+        updated_at: "2023-07-22 03:58:49",
+      },
+      App\Models\Category {#7266
+        id: 89,
+        name: "gggg",
+        description: "ggggg",
+        created_at: "2023-07-22 04:01:14",
+        updated_at: "2023-07-22 04:01:14",
+      },
+      App\Models\Category {#7267
+        id: 90,
+        name: "tttt",
+        description: "ttttttttttt",
+        created_at: "2023-07-22 04:43:55",
+        updated_at: "2023-07-22 04:43:55",
+      },
+    ],
+  }
+
+> Category::destroy(90);
+= 1
+
+> Category::destroy(90);
+= 0
+
+> for($i=1;$i<100;$i++){echo pow(2,$i);}
+248163264128256512102420484096819216384327686553613107226214452428810485762097152419430483886081677721633554432671088641342177282684354565368709121073741824214748364842949672968589934592171798691843435973836868719476736137438953472274877906944549755813888109951162777621990232555524398046511104879609302220817592186044416351843720888327036874417766414073748835532828147497671065656294995342131211258999068426242251799813685248450359962737049690071992547409921801439850948198436028797018963968720575940379279361441151880758558722882303761517117445764607523034234881152921504606846976230584300921369395246116860184273879049.2233720368548E+181.844674407371E+193.6893488147419E+197.3786976294838E+191.4757395258968E+202.9514790517935E+205.9029581035871E+201.1805916207174E+212.3611832414348E+214.7223664828696E+219.4447329657393E+211.8889465931479E+223.7778931862957E+227.5557863725914E+221.5111572745183E+233.0223145490366E+236.0446290980731E+231.2089258196146E+242.4178516392293E+244.8357032784585E+249.671406556917E+241.9342813113834E+253.8685626227668E+257.7371252455336E+251.5474250491067E+263.0948500982135E+266.1897001964269E+261.2379400392854E+272.4758800785708E+274.9517601571415E+279.903520314283E+271.9807040628566E+283.9614081257132E+287.9228162514264E+281.5845632502853E+293.1691265005706E+296.3382530011411E+29⏎
+> for($i=1;$i<100;$i++){echo pow(2,$i)."\n";}
+2
+4
+8
+16
+32
+64
+128
+256
+512
+1024
+2048
+4096
+8192
+16384
+32768
+65536
+131072
+262144
+524288
+1048576
+2097152
+4194304
+8388608
+16777216
+33554432
+67108864
+134217728
+268435456
+536870912
+1073741824
+2147483648
+4294967296
+8589934592
+17179869184
+34359738368
+68719476736
+137438953472
+274877906944
+549755813888
+1099511627776
+2199023255552
+4398046511104
+8796093022208
+17592186044416
+35184372088832
+70368744177664
+140737488355328
+281474976710656
+562949953421312
+1125899906842624
+2251799813685248
+4503599627370496
+9007199254740992
+18014398509481984
+36028797018963968
+72057594037927936
+144115188075855872
+288230376151711744
+576460752303423488
+1152921504606846976
+2305843009213693952
+4611686018427387904
+9.2233720368548E+18
+1.844674407371E+19
+3.6893488147419E+19
+7.3786976294838E+19
+1.4757395258968E+20
+2.9514790517935E+20
+5.9029581035871E+20
+1.1805916207174E+21
+2.3611832414348E+21
+4.7223664828696E+21
+9.4447329657393E+21
+1.8889465931479E+22
+3.7778931862957E+22
+7.5557863725914E+22
+1.5111572745183E+23
+3.0223145490366E+23
+6.0446290980731E+23
+1.2089258196146E+24
+2.4178516392293E+24
+4.8357032784585E+24
+9.671406556917E+24
+1.9342813113834E+25
+3.8685626227668E+25
+7.7371252455336E+25
+1.5474250491067E+26
+3.0948500982135E+26
+6.1897001964269E+26
+1.2379400392854E+27
+2.4758800785708E+27
+4.9517601571415E+27
+9.903520314283E+27
+1.9807040628566E+28
+3.9614081257132E+28
+7.9228162514264E+28
+1.5845632502853E+29
+3.1691265005706E+29
+6.3382530011411E+29
+> for($i=1;$i<100;$i++){echo $i." = ".pow(2,$i)."\n";}
+1 = 2
+2 = 4
+3 = 8
+4 = 16
+5 = 32
+6 = 64
+7 = 128
+8 = 256
+9 = 512
+10 = 1024
+11 = 2048
+12 = 4096
+13 = 8192
+14 = 16384
+15 = 32768
+16 = 65536
+17 = 131072
+18 = 262144
+19 = 524288
+20 = 1048576
+21 = 2097152
+22 = 4194304
+23 = 8388608
+24 = 16777216
+25 = 33554432
+26 = 67108864
+27 = 134217728
+28 = 268435456
+29 = 536870912
+30 = 1073741824
+31 = 2147483648
+32 = 4294967296
+33 = 8589934592
+34 = 17179869184
+35 = 34359738368
+36 = 68719476736
+37 = 137438953472
+38 = 274877906944
+39 = 549755813888
+40 = 1099511627776
+41 = 2199023255552
+42 = 4398046511104
+43 = 8796093022208
+44 = 17592186044416
+45 = 35184372088832
+46 = 70368744177664
+47 = 140737488355328
+48 = 281474976710656
+49 = 562949953421312
+50 = 1125899906842624
+51 = 2251799813685248
+52 = 4503599627370496
+53 = 9007199254740992
+54 = 18014398509481984
+55 = 36028797018963968
+56 = 72057594037927936
+57 = 144115188075855872
+58 = 288230376151711744
+59 = 576460752303423488
+60 = 1152921504606846976
+61 = 2305843009213693952
+62 = 4611686018427387904
+63 = 9.2233720368548E+18
+64 = 1.844674407371E+19
+65 = 3.6893488147419E+19
+66 = 7.3786976294838E+19
+67 = 1.4757395258968E+20
+68 = 2.9514790517935E+20
+69 = 5.9029581035871E+20
+70 = 1.1805916207174E+21
+71 = 2.3611832414348E+21
+72 = 4.7223664828696E+21
+73 = 9.4447329657393E+21
+74 = 1.8889465931479E+22
+75 = 3.7778931862957E+22
+76 = 7.5557863725914E+22
+77 = 1.5111572745183E+23
+78 = 3.0223145490366E+23
+79 = 6.0446290980731E+23
+80 = 1.2089258196146E+24
+81 = 2.4178516392293E+24
+82 = 4.8357032784585E+24
+83 = 9.671406556917E+24
+84 = 1.9342813113834E+25
+85 = 3.8685626227668E+25
+86 = 7.7371252455336E+25
+87 = 1.5474250491067E+26
+88 = 3.0948500982135E+26
+89 = 6.1897001964269E+26
+90 = 1.2379400392854E+27
+91 = 2.4758800785708E+27
+92 = 4.9517601571415E+27
+93 = 9.903520314283E+27
+94 = 1.9807040628566E+28
+95 = 3.9614081257132E+28
+96 = 7.9228162514264E+28
+97 = 1.5845632502853E+29
+98 = 3.1691265005706E+29
+99 = 6.3382530011411E+29
+> $newc = new Category();
+= App\Models\Category {#7247}
+
+> $newc->name = "7777777777";
+= "7777777777"
+
+> $newc->description = "desc7777777777";
+= "desc7777777777"
+
+> $newc->save();
+= true
+
+> $newc;
+= App\Models\Category {#7247
+    name: "7777777777",
+    description: "desc7777777777",
+    updated_at: "2023-07-22 05:06:13",
+    created_at: "2023-07-22 05:06:13",
+    id: 91,
+  }
+
+> User::all();
+[!] Aliasing 'User' to 'App\Models\User' for this Tinker session.
+= Illuminate\Database\Eloquent\Collection {#7220
+    all: [
+      App\Models\User {#7230
+        id: 2,
+        name: "admin",
+        email: "admin@gmail.com",
+        email_verified_at: null,
+        #password: "$2y$10$RjYV7codOmix8Da4w1p3zuF00J/OWTB1Z9L2rGs4Hdrm.hbf63ROW",
+        role: 2,
+        #remember_token: null,
+        created_at: "2023-07-19 06:47:27",
+        updated_at: "2023-07-19 06:47:27",
+      },
+      App\Models\User {#7235
+        id: 3,
+        name: "Mojahid Rafi",
+        email: "rafi@gmail.com",
+        email_verified_at: null,
+        #password: "$2y$10$EYUGdUHSoHHKRuhRqLUxkuVaRv0kPFYTGsMDW5Uz8klncY7DpoNSS",
+        role: 1,
+        #remember_token: null,
+        created_at: "2023-07-19 06:57:17",
+        updated_at: "2023-07-19 06:57:17",
+      },
+      App\Models\User {#7236
+        id: 4,
+        name: "shoyab",
+        email: "shoyab@gmail.com",
+        email_verified_at: null,
+        #password: "$2y$10$RIcw87hZTGMKgxR54w3TM.ls89O.f19iEeUC6GKOCcaXsvMZ20fzi",
+        role: 1,
+        #remember_token: null,
+        created_at: "2023-07-19 06:57:33",
+        updated_at: "2023-07-19 06:57:33",
+      },
+      App\Models\User {#7238
+        id: 5,
+        name: "sayem",
+        email: "sayem@gmail.com",
+        email_verified_at: null,
+        #password: "$2y$10$9CVSbLL5VT1r1lsIw22EP.0lDY5eU9vVC7/sGd87FVG1bWCIRRSKa",
+        role: 2,
+        #remember_token: null,
+        created_at: "2023-07-19 06:57:36",
+        updated_at: "2023-07-19 06:57:36",
+      },
+      App\Models\User {#7274
+        id: 6,
+        name: "Mohd Rejoan",
+        email: "wearecrx@gmail.com",
+        email_verified_at: null,
+        #password: "$2y$10$SJfbnyc22gg1VM962eyfgeIhrdgRnO2kLUwNuRYEdCehpDQueVYtG",
+        role: 1,
+        #remember_token: null,
+        created_at: "2023-07-19 06:57:37",
+        updated_at: "2023-07-19 06:57:37",
+      },
+      App\Models\User {#7272
+        id: 7,
+        name: "Shawon Khan",
+        email: "shawonk007@gmail.com",
+        email_verified_at: null,
+        #password: "$2y$10$VaEC1l5BYPFU8Y.2ftNP7uV4ns.Ojd9JrKSfO/SRx1eQlW7da9OPC",
+        role: 1,
+        #remember_token: null,
+        created_at: "2023-07-19 06:57:40",
+        updated_at: "2023-07-19 06:57:40",
+      },
+      App\Models\User {#7273
+        id: 8,
+        name: "Inzamamul Haque",
+        email: "turjo@gmail.com",
+        email_verified_at: null,
+        #password: "$2y$10$MFYNky0q6.h.wML5fd9PMe0XZHbXtzj1KdaKRh/.h74onVB/wIC4S",
+        role: 2,
+        #remember_token: null,
+        created_at: "2023-07-19 06:57:44",
+        updated_at: "2023-07-19 06:57:44",
+      },
+      App\Models\User {#7275
+        id: 9,
+        name: "shakil",
+        email: "shakilmiahcse36@gmail.com",
+        email_verified_at: null,
+        #password: "$2y$10$BSd73TZH8d1gPTZKkaWc3eki6KeRAv4BsIv65V/OzVqM36JKXJCIC",
+        role: 1,
+        #remember_token: null,
+        created_at: "2023-07-19 06:58:00",
+        updated_at: "2023-07-19 06:58:00",
+      },
+      App\Models\User {#7276
+        id: 10,
+        name: "sajib",
+        email: "sajib@gmail.com",
+        email_verified_at: null,
+        #password: "$2y$10$TwD5VFLnehtsVDazs/fePOzPLyWWA235B6U3Wc6oOh6s5jvpnEXvy",
+        role: 1,
+        #remember_token: null,
+        created_at: "2023-07-19 06:58:07",
+        updated_at: "2023-07-19 06:58:07",
+      },
+      App\Models\User {#7277
+        id: 11,
+        name: "Mohona",
+        email: "mohona7735@gmail.com",
+        email_verified_at: null,
+        #password: "$2y$10$ZazUvdGdPgOYzPjN90dIVeGAFyRCquCza2oFH6sG4xdbbfK7CV/uO",
+        role: 1,
+        #remember_token: null,
+        created_at: "2023-07-19 06:58:43",
+        updated_at: "2023-07-19 06:58:43",
+      },
+      App\Models\User {#7278
+        id: 12,
+        name: "sorifa",
+        email: "sorifa@gmail.com",
+        email_verified_at: null,
+        #password: "$2y$10$fbkxbCg/vfsPXtMnBQnSEOYlnFrvast2mNRcMTcxe.6Zj4UE7XV1O",
+        role: 1,
+        #remember_token: null,
+        created_at: "2023-07-19 06:59:04",
+        updated_at: "2023-07-19 06:59:04",
+      },
+      App\Models\User {#7279
+        id: 13,
+        name: "arafat",
+        email: "arafat@gmail.com",
+        email_verified_at: null,
+        #password: "$2y$10$8ynqTuO5C593g.UMEOz9TeNRKGZtuYGuVVapsxBcYJvjkpajBEz/G",
+        role: 1,
+        #remember_token: null,
+        created_at: "2023-07-19 06:59:13",
+        updated_at: "2023-07-19 06:59:13",
+      },
+    ],
+  }
+
+> Mouse::all();
+[!] Aliasing 'Mouse' to 'App\Models\Mouse' for this Tinker session.
+
+   Illuminate\Database\QueryException  SQLSTATE[42S02]: Base table or view not found: 1146 Table 'r55_laravel.mice' doesn't exist (Connection: mysql, SQL: select * from `mice`).
+
+> bye
+
+   Error  Undefined constant "bye".
+
+> exit;
+
+   INFO  Goodbye.
+
+
+D:\xampp8110\htdocs\R55\laravel\r55bookcode>

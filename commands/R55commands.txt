@@ -12,3 +12,12 @@ php artisan make:model Category -crm
 
 php artisan make:seeder CategorySeeder
 php artisan db:seed --class=CategorySeeder
+
+
+############# DEBUGBAR #############
+composer require barryvdh/laravel-debugbar --dev
+
+
+#################tinker console #################
+
+PHP ARTISAN TINKER
