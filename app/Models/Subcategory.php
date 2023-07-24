@@ -4,22 +4,18 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
-
-class Category extends Model
+class Subcategory extends Model
 {
     use HasFactory;
-    protected $fillable = [
-        'name',
-        'description',
-    ];
     /**
-     * Get the comments for the blog post.
+     * Get the post that owns the comment.
      */
-    public function subcategories(): HasMany
+    public function category(): BelongsTo
     {
-        return $this->hasMany(Subcategory::class);
+        return $this->belongsTo(Category::class);
     }
     public function products(): HasMany
     {

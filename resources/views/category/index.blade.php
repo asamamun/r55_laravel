@@ -19,6 +19,7 @@
         <th>id</th>
         <th>name</th>
         <th>desc</th>
+        <th>Subcats</th>
         <th>Action</th>
     </tr>
 @forelse ($cats as $cat)
@@ -26,6 +27,15 @@
         <td>{{$cat->id}}</td>
         <td>{{$cat->name}}</td>
         <td>{{$cat->description}}</td>
+        <td>
+            <ul>
+            @forelse ($cat->subcategories as $sc)
+               <li>{{$sc->name}}</li> 
+            @empty
+                
+            @endforelse
+        </ul>
+        </td>
         <td style="text-align: center"> 
             <a href="{{url("category/".$cat->id)}}"><i class="bi bi-eye-fill"></i></i></a>
             <a href="{{route("category.edit",$cat->id)}}"><i class="bi bi-pencil-square"></i></a>
@@ -42,7 +52,7 @@
 @endforelse
 </table>
 <hr>
-{{$cats->links()}}
+{{$cats->onEachSide(3)->links()}}
 @endsection
 
 

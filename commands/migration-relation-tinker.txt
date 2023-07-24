@@ -1,0 +1,328 @@
+Microsoft Windows [Version 10.0.19045.3208]
+(c) Microsoft Corporation. All rights reserved.
+
+D:\xampp8110\htdocs\R55\laravel\r55bookcode>php artisan migrate:rollback
+
+   INFO  Rolling back migrations.
+
+  2023_07_20_053918_create_categories_table ................ 493ms DONE
+
+
+D:\xampp8110\htdocs\R55\laravel\r55bookcode>php artisan migrate:rollback
+
+   INFO  Rolling back migrations.
+
+  2019_12_14_000001_create_personal_access_tokens_table .... 284ms DONE
+  2019_08_19_000000_create_failed_jobs_table ............... 141ms DONE
+  2014_10_12_100000_create_password_reset_tokens_table ..... 183ms DONE
+  2014_10_12_000000_create_users_table ...................... 84ms DONE
+
+
+D:\xampp8110\htdocs\R55\laravel\r55bookcode>php artisan make:model SubCategory -mcr
+
+   INFO  Model [D:\xampp8110\htdocs\R55\laravel\r55bookcode\app/Models/SubCategory.php] created successfully.
+
+   INFO  Migration [D:\xampp8110\htdocs\R55\laravel\r55bookcode\database\migrations/2023_07_24_034211_create_sub_categories_table.php] created successfully.
+
+   INFO  Controller [D:\xampp8110\htdocs\R55\laravel\r55bookcode\app/Http/Controllers/SubCategoryController.php] created successfully.
+
+
+D:\xampp8110\htdocs\R55\laravel\r55bookcode>php artisan make:model Product -mcrsR
+
+   INFO  Model [D:\xampp8110\htdocs\R55\laravel\r55bookcode\app/Models/Product.php] created successfully.
+
+   INFO  Migration [D:\xampp8110\htdocs\R55\laravel\r55bookcode\database\migrations/2023_07_24_034343_create_products_table.php] created successfully.
+
+   INFO  Seeder [D:\xampp8110\htdocs\R55\laravel\r55bookcode\database/seeders/ProductSeeder.php] created successfully.
+
+   INFO  Request [D:\xampp8110\htdocs\R55\laravel\r55bookcode\app/Http/Requests/StoreProductRequest.php] created successfully.
+
+   INFO  Request [D:\xampp8110\htdocs\R55\laravel\r55bookcode\app/Http/Requests/UpdateProductRequest.php] created successfully.
+
+   INFO  Controller [D:\xampp8110\htdocs\R55\laravel\r55bookcode\app/Http/Controllers/ProductController.php] created successfully.
+
+
+D:\xampp8110\htdocs\R55\laravel\r55bookcode>php artisan make:model Image -mcrs
+
+   INFO  Model [D:\xampp8110\htdocs\R55\laravel\r55bookcode\app/Models/Image.php] created successfully.
+
+   INFO  Migration [D:\xampp8110\htdocs\R55\laravel\r55bookcode\database\migrations/2023_07_24_034407_create_images_table.php] created successfully.
+
+   INFO  Seeder [D:\xampp8110\htdocs\R55\laravel\r55bookcode\database/seeders/ImageSeeder.php] created successfully.
+
+   INFO  Controller [D:\xampp8110\htdocs\R55\laravel\r55bookcode\app/Http/Controllers/ImageController.php] created successfully.
+
+
+D:\xampp8110\htdocs\R55\laravel\r55bookcode>php artisan make:model Comment -m
+
+   INFO  Model [D:\xampp8110\htdocs\R55\laravel\r55bookcode\app/Models/Comment.php] created successfully.
+
+   INFO  Migration [D:\xampp8110\htdocs\R55\laravel\r55bookcode\database\migrations/2023_07_24_034624_create_comments_table.php] created successfully.
+
+
+D:\xampp8110\htdocs\R55\laravel\r55bookcode>php artisan make:model Subcategory -mcr
+
+   ERROR  Model already exists.
+
+
+D:\xampp8110\htdocs\R55\laravel\r55bookcode>php artisan make:model Subcategory -mcr
+
+   INFO  Model [D:\xampp8110\htdocs\R55\laravel\r55bookcode\app/Models/Subcategory.php] created successfully.
+
+   INFO  Migration [D:\xampp8110\htdocs\R55\laravel\r55bookcode\database\migrations/2023_07_24_034937_create_subcategories_table.php] created successfully.
+
+   INFO  Controller [D:\xampp8110\htdocs\R55\laravel\r55bookcode\app/Http/Controllers/SubcategoryController.php] created successfully.
+
+
+D:\xampp8110\htdocs\R55\laravel\r55bookcode>php artisan migrate
+
+   INFO  Running migrations.
+
+  2014_10_12_000000_create_users_table ..................... 443ms DONE
+  2014_10_12_100000_create_password_reset_tokens_table ..... 535ms DONE
+  2019_08_19_000000_create_failed_jobs_table ............... 621ms DONE
+  2019_12_14_000001_create_personal_access_tokens_table .... 774ms DONE
+  2023_07_20_053918_create_categories_table ................ 402ms DONE
+  2023_07_24_034343_create_products_table ................ 1,221ms FAIL
+
+   Illuminate\Database\QueryException
+
+  SQLSTATE[HY000]: General error: 1005 Can't create table `r55_laravel`.`products` (errno: 150 "Foreign key constraint is incorrectly formed") (Connection: mysql, SQL: alter table `products` add constraint `products_subcategory_id_foreign` foreign key (`subcategory_id`) references `subcategories` (`id`))
+
+  at vendor\laravel\framework\src\Illuminate\Database\Connection.php:795
+    791▕         // If an exception occurs when attempting to run a query, we'll format the error
+    792▕         // message to include the bindings with SQL, which will make this exception a
+    793▕         // lot more helpful to the developer instead of just the database's errors.
+    794▕         catch (Exception $e) {
+  ➜ 795▕             throw new QueryException(
+    796▕                 $this->getName(), $query, $this->prepareBindings($bindings), $e
+    797▕             );
+    798▕         }
+    799▕     }
+
+  1   vendor\laravel\framework\src\Illuminate\Database\Connection.php:580
+      PDOException::("SQLSTATE[HY000]: General error: 1005 Can't create table `r55_laravel`.`products` (errno: 150 "Foreign key constraint is incorrectly formed")")
+
+  2   vendor\laravel\framework\src\Illuminate\Database\Connection.php:580
+      PDOStatement::execute()
+
+
+D:\xampp8110\htdocs\R55\laravel\r55bookcode>php artisan migrate:rollback
+
+   INFO  Rolling back migrations.
+
+  2023_07_20_053918_create_categories_table ................. 87ms FAIL
+
+   Illuminate\Database\QueryException
+
+  SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (Connection: mysql, SQL: drop table if exists `categories`)
+
+  at vendor\laravel\framework\src\Illuminate\Database\Connection.php:795
+    791▕         // If an exception occurs when attempting to run a query, we'll format the error
+    792▕         // message to include the bindings with SQL, which will make this exception a
+    793▕         // lot more helpful to the developer instead of just the database's errors.
+    794▕         catch (Exception $e) {
+  ➜ 795▕             throw new QueryException(
+    796▕                 $this->getName(), $query, $this->prepareBindings($bindings), $e
+    797▕             );
+    798▕         }
+    799▕     }
+
+  1   vendor\laravel\framework\src\Illuminate\Database\Connection.php:580
+      PDOException::("SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails")
+
+  2   vendor\laravel\framework\src\Illuminate\Database\Connection.php:580
+      PDOStatement::execute()
+
+
+D:\xampp8110\htdocs\R55\laravel\r55bookcode>php artisan migrate
+
+   INFO  Running migrations.
+
+  2014_10_12_000000_create_users_table ..................... 378ms DONE
+  2014_10_12_100000_create_password_reset_tokens_table ..... 491ms DONE
+  2019_08_19_000000_create_failed_jobs_table ............... 260ms DONE
+  2019_12_14_000001_create_personal_access_tokens_table .... 789ms DONE
+  2023_07_20_053918_create_categories_table ................ 293ms DONE
+  2023_07_24_034342_create_subcategories_table ........... 1,383ms DONE
+  2023_07_24_034343_create_products_table ................ 1,669ms DONE
+  2023_07_24_034407_create_images_table .................. 1,435ms DONE
+
+
+D:\xampp8110\htdocs\R55\laravel\r55bookcode>php artisan make:model Profile -m
+
+   INFO  Model [D:\xampp8110\htdocs\R55\laravel\r55bookcode\app/Models/Profile.php] created successfully.
+
+   INFO  Migration [D:\xampp8110\htdocs\R55\laravel\r55bookcode\database\migrations/2023_07_24_035958_create_profiles_table.php] created successfully.
+
+
+D:\xampp8110\htdocs\R55\laravel\r55bookcode>php artisan migrate
+
+   INFO  Running migrations.
+
+  2023_07_24_035958_create_profiles_table .................. 789ms DONE
+
+
+D:\xampp8110\htdocs\R55\laravel\r55bookcode>
+
+D:\xampp8110\htdocs\R55\laravel\r55bookcode>php artisan tinker
+Psy Shell v0.11.19 (PHP 8.1.10 — cli) by Justin Hileman
+> use App\Models\User;
+> $u = User::find(1);
+= App\Models\User {#7228
+    id: 1,
+    name: "admin",
+    email: "admin@gmail.com",
+    email_verified_at: null,
+    #password: "$2y$10$Hqaqz21QmYNicNxwNjYo6.7ZeXdrV9VlYIzRF0yJVf0VtfulzGxXO",
+    role: 1,
+    #remember_token: null,
+    created_at: "2023-07-24 04:07:21",
+    updated_at: "2023-07-24 04:07:21",
+  }
+
+> $p = new Profile();
+
+   Error  Class "Profile" not found.
+
+> use App\Models\Profile;
+> $p = new Profile();
+= App\Models\Profile {#7217}
+
+> color 7
+
+   PARSE ERROR  PHP Parse error: Syntax error, unexpected T_LNUMBER in vendor\psy\psysh\src\Exception\ParseErrorException.php on line 38.
+
+> $p->phone = "01911123456";
+= "01911123456"
+
+> $p->father_name = "admin father";
+= "admin father"
+
+> $p->mother_name = "admin mother";
+= "admin mother"
+
+> $u->profile()->save($p);
+= App\Models\Profile {#7217
+    phone: "01911123456",
+    father_name: "admin father",
+    mother_name: "admin mother",
+    user_id: 1,
+    updated_at: "2023-07-24 04:12:35",
+    created_at: "2023-07-24 04:12:35",
+    id: 1,
+  }
+
+>  $u->profile;
+= App\Models\Profile {#7238
+    id: 1,
+    user_id: 1,
+    phone: "01911123456",
+    father_name: "admin father",
+    mother_name: "admin mother",
+    addres1: null,
+    addres2: null,
+    bg: null,
+    fb: null,
+    tw: null,
+    th: null,
+    created_at: "2023-07-24 04:12:35",
+    updated_at: "2023-07-24 04:12:35",
+  }
+
+> $u->email;
+= "admin@gmail.com"
+
+>     PS D:\xampp8110\htdocs\R55\laravel\r55bookcode> php artisan tinker
+Psy Shell v0.11.19 (PHP 8.1.10 — cli) by Justin Hileman
+> use App\Models\Profile;
+> $p = Profile::where("phone","01911123456")->first();
+= App\Models\Profile {#7218
+    id: 1,
+    user_id: 1,
+    phone: "01911123456",
+    father_name: "admin father",      
+    mother_name: "admin mother",      
+    addres1: null,
+    addres2: null,
+    bg: null,
+    fb: null,
+    tw: null,
+    th: null,
+    created_at: "2023-07-24 04:12:35",
+    updated_at: "2023-07-24 04:12:35",
+  }
+
+> $p->user;
+= App\Models\User {#7234
+    id: 1,
+    name: "admin",
+    email: "admin@gmail.com",
+    email_verified_at: null,
+    #password: "$2y$10$Hqaqz21QmYNicNxwNjYo6.7ZeXdrV9VlYIzRF0yJVf0VtfulzGxXO",
+    role: 1,
+    #remember_token: null,
+    created_at: "2023-07-24 04:07:21",
+    updated_at: "2023-07-24 04:07:21",
+  }
+
+> $p->user->email;;
+= "admin@gmail.com"
+
+>Warning: PowerShell detected that you might be using a screen reader and has disabled PSReadLine for compatibility purposes. If you want to re-enable it, run 'Import-Module PSReadLine'.
+
+PS D:\xampp8110\htdocs\R55\laravel\r55bookcode> php artisan tinker
+Psy Shell v0.11.19 (PHP 8.1.10 — cli) by Justin Hileman
+> use App\Models\Profile;
+> $p = Profile::where("phone","01911123456")->first();
+= App\Models\Profile {#7218
+    id: 1,
+    user_id: 1,
+    phone: "01911123456",
+    father_name: "admin father",      
+    mother_name: "admin mother",      
+    addres1: null,
+    addres2: null,
+    bg: null,
+    fb: null,
+    tw: null,
+    th: null,
+    created_at: "2023-07-24 04:12:35",
+    updated_at: "2023-07-24 04:12:35",
+  }
+
+> $p->user;
+= App\Models\User {#7234
+    id: 1,
+    name: "admin",
+    email: "admin@gmail.com",
+    email_verified_at: null,
+    #password: "$2y$10$Hqaqz21QmYNicNxwNjYo6.7ZeXdrV9VlYIzRF0yJVf0VtfulzGxXO",
+    role: 1,
+    #remember_token: null,
+    created_at: "2023-07-24 04:07:21",
+    updated_at: "2023-07-24 04:07:21",
+  }
+
+> $p->user->email;;
+= "admin@gmail.com"
+> use App\Models\Category;
+>
+PS D:\xampp8110\htdocs\R55\laravel\r55bookcode> php artisan db:seed
+
+   INFO  Seeding database.  
+
+  Database\Seeders\CategorySeeder .................................................. RUNNING  
+  Database\Seeders\CategorySeeder ......................................... 1,570.23 ms DONE  
+
+PS D:\xampp8110\htdocs\R55\laravel\r55bookcode> php artisan db:seed
+
+   INFO  Seeding database.  
+
+  Database\Seeders\ProductSeeder ................................................... RUNNING  
+  Database\Seeders\ProductSeeder .......................................... 5,418.67 ms DONE  
+
+  Database\Seeders\ImageSeeder ..................................................... RUNNING  
+  Database\Seeders\ImageSeeder ........................................... 23,739.93 ms DONE  
+
+PS D:\xampp8110\htdocs\R55\laravel\r55bookcode>                                                                       

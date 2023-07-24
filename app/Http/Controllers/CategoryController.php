@@ -14,7 +14,8 @@ class CategoryController extends Controller
     public function index()
     {
         // $cats = Category::all();
-        $cats = Category::paginate(config("idb.perpage"));
+        $cats = Category::with('subcategories')->paginate(config("idb.perpage"));
+        // dd($cats);
         // return view("category.index")->with('cats', $cats);
         // return view("category.index",['cats'=>$cats]);
         return view("category.index",compact("cats"));
