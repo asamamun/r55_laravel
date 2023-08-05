@@ -1,0 +1,21 @@
+composer require laravelcollective/html
+This package is abandoned and no longer maintained. The author suggests using the spatie/laravel-html package instead.
+
+composer require spatie/laravel-html
+
+Form-related elements
+function checkbox(string $name = '', ?bool $checked = false, ?string $value = '1'): Input
+function email(string $name = '', ?string $value = ''): Input
+function input(?string $type = '', string $name = '', ?string $value = ''): Input
+function fieldset($legend = null): Fieldset
+function hidden(string $name = '', ?string $value = ''): Input
+function label($contents = null, string $for = ''): Label
+function legend($contents = null): Legend
+function option(?string $text = '', ?string $value = '', $selected = false): Option
+function password(string $name = ''): Input
+function radio(string $name = '', ?bool $checked = false, ?string $value = ''): Input
+function select(string $name = '', iterable $options = [], ?string $value = ''): Select
+function submit(?string $text = ''): Button
+function text(string $name = '', ?string $value = ''): Input
+function textarea(string $name = '', ?string $value = ''): Textarea
+function token(): Input

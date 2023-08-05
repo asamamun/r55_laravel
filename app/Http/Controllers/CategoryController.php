@@ -34,6 +34,14 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
+        $this->validate($request,[
+            'name' => "required|string|min:5|max:10|unique:categories,name",
+            'description' => "required|min:10|max:255"
+        ],[
+         'name.required' => ':attribute না দিয়ে উপায় নেই গোলাম হোসেন।',
+         'name.min' => ':attribute কমপক্ষে ৫ অক্ষরের হতে হবে।',
+         'description.required' => 'ডিস্ক্রিপ্সন দিতেই হবে।',
+        ]);
         // dd($request);
         Category::create($request->all());
         return redirect("category")->with("info", "Successfully created");
@@ -60,6 +68,14 @@ class CategoryController extends Controller
      */
     public function update(Request $request, Category $category)
     {
+        $this->validate($request,[
+            'name' => "required|string|min:5|max:10|unique:categories,name",
+            'description' => "required|min:10|max:255"
+        ],[
+         'name.required' => ':attribute না দিয়ে উপায় নেই গোলাম হোসেন।',
+         'name.min' => ':attribute কমপক্ষে ৫ অক্ষরের হতে হবে।',
+         'description.required' => 'ডিস্ক্রিপ্সন দিতেই হবে।',
+        ]);
         $category->name = $request->name;
         $category->description = $request->description;
         if($category->save()){

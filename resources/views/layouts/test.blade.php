@@ -6,8 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" href="{{asset("assets/css/bootstrap.min.css")}}">
+    <link rel="stylesheet" href="{{asset("staticassets/css/lightbox.min.css")}}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
   <div class="container">
@@ -16,6 +17,7 @@
       <div class="row">
         <div class="col-9">
           @include('partials.flash')
+          @include('partials.error')
             @yield('content')
         </div>
         <div class="col-3">
@@ -36,6 +38,7 @@
       </div>
       <script src="{{asset("assets/js/bootstrap.bundle.min.js")}}"></script>
       <script src="{{asset("assets/js/jquery-3.7.0.min.js")}}"></script>
+      <script src="{{ asset("staticassets/js/lightbox.min.js") }}"></script>
       @yield('script')
 
 

@@ -5,13 +5,14 @@ namespace App\Http\Requests;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\Auth;
 
-class StoreProductRequest extends FormRequest
+class CreateCategoryRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
      */
     public function authorize(): bool
     {
+        // return true;
         return Auth::check();
     }
 
@@ -23,17 +24,8 @@ class StoreProductRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'category_id'=>'required',
-            'subcategory_id'=>'required',
-            'name' => 'required|max:255',
-            'sku' => 'required|unique:products,sku',
-            'details' => 'required|min:30',
-            'price' => 'required',
-            'quantity' => 'required',
-            'status' => 'required',
-            'hot' => 'required',
-            'new' => 'required',
-            'images' => 'required',
+            'name' => "required|string|min:2|max:5",
+            'description' => "required|min:2|max:10"
         ];
     }
 }

@@ -62,4 +62,9 @@ class SubcategoryController extends Controller
     {
         //
     }
+
+    public function getSubcat($catid){
+        $sc = Subcategory::where("category_id",$catid)->pluck("name","id");
+        return response()->json($sc);
+    }
 }
