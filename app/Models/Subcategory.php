@@ -10,6 +10,10 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class Subcategory extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'category_id',
+        'name',
+    ];
     /**
      * Get the post that owns the comment.
      */

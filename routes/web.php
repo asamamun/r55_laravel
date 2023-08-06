@@ -54,6 +54,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/album', [HomeController::class, 'album']);
     Route::resource('product', ProductController::class);
     Route::resource('category', CategoryController::class);
+    Route::resource('subcategory', SubcategoryController::class);
 });
 
 Route::get("/getsubcat/{id}",[SubcategoryController::class, 'getSubcat']);

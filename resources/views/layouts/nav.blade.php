@@ -14,6 +14,9 @@
             <a class="nav-link" href="{{route("category.index")}}">Category</a>
           </li>
           <li class="nav-item">
+            <a class="nav-link" href="{{route("subcategory.index")}}">SubCategory</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" href="{{route("product.index")}}">Product</a>
           </li>
           {{-- <li class="nav-item">
