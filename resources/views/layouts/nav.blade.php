@@ -65,6 +65,12 @@
           </li>
           @endguest
 
+          <li class="nav-item">
+            <a class="nav-link" href="{{url("cart")}}">
+              <i class="bi bi-cart3 cartbadge" id="cartbadge" value="5"></i>
+            </a>
+          </li>
+
 
         </ul>
         <form class="d-flex" role="search">

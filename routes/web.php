@@ -28,6 +28,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/home', [HomeController::class, 'index']);
+Route::get('/cart', [HomeController::class, 'cart']);
 // Route::get('/category', [CategoryController::class, 'index']);
 // Route::get('/category/{id}', [CategoryController::class, 'showcat']);
 

@@ -9,20 +9,36 @@
     <link rel="stylesheet" href="{{asset("staticassets/css/lightbox.min.css")}}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    @yield('style')
+    <style>
+          .cartbadge:after{
+        content:attr(value);
+        font-size:12px;
+        color: #fff;
+        background: red;
+        border-radius:50%;
+        padding: 0 5px;
+        position:relative;
+        left:-8px;
+        top:-10px;
+        opacity:0.9;
+    }
+    </style>
 </head>
 <body>
   <div class="container">
 @include('layouts.nav')
 
       <div class="row">
+        <div class="col-3">
+          @yield('sidebar')
+      </div>
         <div class="col-9">
           @include('partials.flash')
           @include('partials.error')
             @yield('content')
         </div>
-        <div class="col-3">
-            @yield('sidebar')
-        </div>
+
       </div>
       <div class="container">
         <footer class="py-3 my-4">
@@ -39,6 +55,39 @@
       <script src="{{asset("assets/js/bootstrap.bundle.min.js")}}"></script>
       <script src="{{asset("assets/js/jquery-3.7.0.min.js")}}"></script>
       <script src="{{ asset("staticassets/js/lightbox.min.js") }}"></script>
+      <script src="{{ asset("staticassets/js/cart.js") }}"></script>
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+      <script>
+        $(document).ready(function () {
+          let c = new Cart();
+          // c.emptyCart();
+          console.log(c.items)
+          $("#cartbadge").attr("value", c.totalItems());
+
+          $(".addCartIcon").click(function(){
+            $t = $(this);
+            let i = {
+              id: $t.data("pid"),
+              name: $t.data("pname"),
+              price: $t.data("pprice"),
+              quantity: 1,
+            };
+            c.addItem(i);
+            Swal.fire({
+  position: 'top-end',
+  icon: 'success',
+  title: 'Item Added To Cart',
+  showConfirmButton: false,
+  timer: 1500
+}).then(()=>{
+              $("#cartbadge").attr("value", c.totalItems());
+              console.log(c.items);
+            });
+            
+            // console.log($(this).data('pid'));
+          });
+        });
+      </script>
       @yield('script')
 
 
