@@ -51,12 +51,17 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
-    
+
+});
+Route::middleware('admin')->group(function () {
     Route::get('/album', [HomeController::class, 'album']);
     Route::resource('product', ProductController::class);
     Route::resource('category', CategoryController::class);
     Route::resource('subcategory', SubcategoryController::class);
 });
+
+    
+
 
 Route::get("/getsubcat/{id}",[SubcategoryController::class, 'getSubcat']);
 

@@ -84,7 +84,8 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
-        dd($product);
+        return view("product.single")->with("product", $product);
+        // dd($product);
     }
 
     /**

@@ -56,6 +56,7 @@
       <script src="{{asset("assets/js/jquery-3.7.0.min.js")}}"></script>
       <script src="{{ asset("staticassets/js/lightbox.min.js") }}"></script>
       <script src="{{ asset("staticassets/js/cart.js") }}"></script>
+      <script src="{{ asset("staticassets/js/speech.js") }}"></script>
       <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
       <script>
         $(document).ready(function () {
@@ -73,6 +74,7 @@
               quantity: 1,
             };
             c.addItem(i);
+            talk("Item Added To Cart");
             Swal.fire({
   position: 'top-end',
   icon: 'success',

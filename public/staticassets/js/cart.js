@@ -38,7 +38,7 @@ class Cart {
   
     // Get the total price of all items in the cart
     getTotalPrice() {
-      return this.items.reduce((total, item) => total + item.price, 0);
+      return this.items.reduce((total, item) => total + item.price*item.quantity, 0);
     }
     totalItems(){
         return this.items.length;
